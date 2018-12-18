@@ -3,7 +3,7 @@
 @section('content')
 
 
-	{!! Form::open(['url' => 'blogs']) !!}
+	{!! Form::open(['url' => 'products']) !!}
 
 		{!! Form::label('title','Products:') !!}
 		{!! Form::text('title',null, ['class' => 'form-control', 'placeholder' => 'Product Name']) !!}

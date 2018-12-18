@@ -19,12 +19,12 @@ Route::get('/', function () {
 Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 
-Route::get('blogs', 'BlogController@index');
-Route::get('blogs/create', 'BlogController@create');
-Route::post('blogs', 'BlogController@store');
-Route::get('blogs/category/{category}', 'BlogController@category');
-Route::get('blogs/show/{id}', 'BlogController@show');
-Route::post('blogs/show/{id}', 'BlogController@edit');
+Route::get('products', 'ProductController@index');
+Route::get('products/create', 'ProductController@create');
+Route::post('products', 'ProductController@store');
+Route::get('products/category/{category}', 'ProductController@category');
+Route::get('products/show/{id}', 'ProductController@show');
+Route::post('products/show/{id}', 'ProductController@edit');
 
 
 
