@@ -15,24 +15,28 @@
 
 	{!! Form::open(['url' => 'blogs']) !!}
 
-		{!! Form::label('title','Blog Title:') !!}
-		{!! Form::text('title',null, ['class' => 'form-control', 'placeholder' => 'ex. Blog Title']) !!}
+		{!! Form::label('title','Products:') !!}
+		{!! Form::text('title',null, ['class' => 'form-control', 'placeholder' => 'Product Name']) !!}
 		<br>
 
 		<div class="form-group">
-			{!! Form::label('body', 'Body:') !!}
-			{!! Form::textarea('body',null,['class' => 'form-control']) !!}
+			{!! Form::label('description', 'Description:') !!}
+			{!! Form::textarea('description',null,['class' => 'form-control']) !!}
 		</div>
 
-		
+		<div class="form-group">
+			{!! Form::label('price', 'Price:') !!}
+			{!! Form::textarea('description',null,['class' => 'form-control']) !!}
+		</div>
+
 		<div>
 			{!! Form::label('category','Category:') !!} 
 
-			{!! Form::select('category',array ('Tips' => 'Tips', 'Technology' => 'Technology', 'Health' => 'Health', 'Politics' => 'Politics', 'Review' => 'Review'),null, ['class' => 'form-control']) !!}
+			{!! Form::select('category',array ('Drinks' => 'Drinks', 'Technology' => 'Technology', 'Appliances' => 'Appliances', 'Foods' => 'Foods', 'Lingerie' => 'Lingerie'),null, ['class' => 'form-control']) !!}
 		</div>
 		
 		<br>
-		{!! Form::submit('Add new Blog', ['class' => 'btn btn-primary']) !!}
+		{!! Form::submit('Add New', ['class' => 'btn btn-primary']) !!}
 
 	{!! Form::close() !!}
 

@@ -16,7 +16,9 @@ class CreateArticlesTable extends Migration
         Schema::create('blogs', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
-            $table->text('body');
+            $table->text('description');
+            $table->increments('wholesale_price');
+            $table->increments('price');
             $table->string('category');
             $table->timestamps();
         });

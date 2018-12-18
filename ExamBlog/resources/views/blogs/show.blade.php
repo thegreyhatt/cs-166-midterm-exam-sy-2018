@@ -19,14 +19,14 @@
 		<br>
 
 		<div class="form-group">
-			{!! Form::label('body', 'Body:') !!}
-			{!! Form::textarea('body',$blogs->body,['class' => 'form-control']) !!}
+			{!! Form::label('description', 'Body:') !!}
+			{!! Form::textarea('description',$blogs->description,['class' => 'form-control']) !!}
 		</div>
 
 		<div>
 			{!! Form::label('category','Category:') !!} 
 
-			{!! Form::select('category',array ('Tips' => 'Tips', 'Technology' => 'Technology', 'Health' => 'Health', 'Politics' => 'Politics', 'Review' => 'Review'),$blogs->category, ['class' => 'form-control']) !!}
+		{!! Form::select('category',array ('Drinks' => 'Drinks', 'Technology' => 'Technology', 'Appliances' => 'Appliances',null, ['class' => 'form-control']) !!}
 		</div>
 		
 		<br>

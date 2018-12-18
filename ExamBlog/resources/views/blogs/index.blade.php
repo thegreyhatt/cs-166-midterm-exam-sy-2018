@@ -11,7 +11,7 @@
 			<div class="panel-body" style="padding-top: 0px">
 				<article>
 				<h3><a href="{{ url('blogs/show/'.$blog->id) }}"><b>{{ $blog->title }}</b></a></h3>
-				<p>{{ $blog->body }}</p>
+				<p>{{ $blog->description }}</p>
 				<a href="{{ url('blogs/category/' .$blog->category) }}"><b>{{ $blog->category }}</b></a>
 				<br>
 				<small class="text-muted"><i>Posted: {{ $blog->updated_at }}</i> </small>

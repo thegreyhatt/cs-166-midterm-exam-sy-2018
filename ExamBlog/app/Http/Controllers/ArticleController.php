@@ -37,12 +37,10 @@ class ArticleController extends Controller
       
       $rules = [
         'title' => 'required|min:3',
-        'body' => 'required',
       ];
       $err_msgs = [
         'title.required' => 'Article must have a title',
         'title.min' => 'Article title must have atleast 3 character',
-        'body.required' => 'Article body is required',
       ];
 
       $validator = Validator::make(Request::all(), $rules, $err_msgs);
@@ -55,7 +53,6 @@ class ArticleController extends Controller
 
       $article = New Article;
       $article->title = $inputs['title'];
-      $article->body = $inputs['body'];
       $article->save();
 
     	return redirect('articles');
@@ -69,12 +66,10 @@ public function edit($id)
 
   $rules = [
         'title' => 'required|min:3',
-        'body' => 'required',
       ];
       $err_msgs = [
         'title.required' => 'Article must have a title',
         'title.min' => 'Article title must have atleast 3 character',
-        'body.required' => 'Article body is required',
       ];
 
       $validator = Validator::make(Request::all(), $rules, $err_msgs);
