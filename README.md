@@ -2,7 +2,7 @@
 A simple products management system (Time: 8:30 AM - 11:00 AM)
 
 ## Entities
-### Product
+### Products
     [name, description, wholesale_price, retail, price, category(this would be on a select/combobox)]
 ### Categories
     [name, description, show/unshow(boolean)]
