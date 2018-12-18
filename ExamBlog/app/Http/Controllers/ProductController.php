@@ -2,27 +2,27 @@
 
 namespace App\Http\Controllers;
 use Request;
-use\App\Blog;
+use\App\Product;
 Use\Validator;
 
-class BlogController extends Controller
+class ProductController extends Controller
 {
     public function index()
     {
-      $blogs = Blog::all();
-      return view('blogs.index', compact('blogs'));
+      $products= Product::all();
+      return view('products.index', compact('products'));
     }
      public function create()
    {
-      return view('blogs.create');
+      return view('products.create');
    }
     public function show($id)
    {
 
     // return $id;
-      $blogs = Blog::findorfail($id);
+      $products = Product::findorfail($id);
 
-      return view('blogs.show', compact('blogs'));
+      return view('products.show', compact('products'));
    }
       public function store(){
        $inputs=Request::all();
@@ -41,7 +41,7 @@ class BlogController extends Controller
               ->withInput(Request::all())
               ->withErrors($validator);
         }
-       Blog::create($inputs);
+       Product::create($inputs);
        return redirect('blogs');
        }
        public function edit($id){
@@ -50,9 +50,9 @@ class BlogController extends Controller
           'body' =>'required',
         ];
         $err_msgs =[
-          'title.required' =>'Article must have a title',
-          'title.min' => 'Article title must be atleast 3 charaters',
-          'body.required' => 'Article body is required',
+          'title.required' =>'Product must have a title',
+          'title.min' => 'Product title must be atleast 3 charaters',
+          'body.required' => 'Product body is required',
         ];
         $validator=Validator::make(Request::all(), $rules,$err_msgs);
         if($validator->fails()){
@@ -62,15 +62,15 @@ class BlogController extends Controller
         }
         
        
-        $blogs=Blog::find($id);
-        $blogs->fill(Request::all());
-        $blogs->save();
-        return redirect('blogs');
+        $products=Product:find($id);
+        $products->fill(Request::all());
+        $products->save();
+        return redirect('products');
        }
        public function category($category){
        
-        $blogs = blog_db::table('blogs')->where('category', $category)->get();
-        return view('blogs.category', compact('blogs'));
+        $products = products_db::table('products')->where('products', $category)->get();
+        return view('products.category', compact('products'));
        }
      
 }
