@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use \App\Category;
+use \App\Product;
 use Request, Validator;
 
 class CategoryController extends Controller
@@ -19,8 +20,16 @@ class CategoryController extends Controller
     	return view('categories.create');
     }
 
+    public function showProducts($category_name)
+    {
+        $category_id = Category::all()->where('name', $category_name)->pluck('id')->first();
+        $products = Product::where('category_id', $category_id)->get();
+        return view('products.index2', compact('products'));
+    }
+
     public function show($id)
     {
+
         $categories = Category::findorfail($id);
 
         return view('categories.show', compact('categories'));
@@ -49,6 +58,7 @@ class CategoryController extends Controller
 
     	return redirect('categories');
     }
+
 
     public function update($id)
     {

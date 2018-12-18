@@ -16,5 +16,6 @@ Route::get('/', function () {
 });
 Auth::routes();
 
+Route::get('categories/tags/{category_name}', 'CategoryController@showProducts');
 Route::resource('products', 'ProductsController');
 Route::resource('categories', 'CategoryController');

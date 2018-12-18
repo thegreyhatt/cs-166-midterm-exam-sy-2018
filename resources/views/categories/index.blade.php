@@ -16,6 +16,7 @@
 						</thead>
 						<tbody>
 							@foreach($categories as $category)
+							<a href="{{ url('categories/tags/'.$category->name) }}">{{ $category->name }}</a>|
 							<tr>
 								<td> <a href="categories/{{ $category->id }}">{{ $category->name }}</a> </td>
 								<td>{{ $category->description }}</td>

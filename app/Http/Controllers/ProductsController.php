@@ -12,8 +12,8 @@ class ProductsController extends Controller
     {
 
         $products = Product::latest()->get();
-
-    	return view('products.index', compact('products'));
+        $categories = Category::all()->pluck('name')->toArray();
+    	return view('products.index', compact('products'))->with('categories', $categories);
     }
 
     public function create()
@@ -27,7 +27,7 @@ class ProductsController extends Controller
     public function show($id)
     {
         $product = Product::findorfail($id);
-        $categories = Category::all()->where('confirmed', 1)->pluck('name')->toArray();
+        $categories = Category::all()->where('confirmed', 1)->pluck('name')->toArray();  
         return view('products.show', compact('product'))->with('categories', $categories);
     }
 

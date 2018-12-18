@@ -5,7 +5,7 @@
 	@include('categories._error')
 	{!! Form::model($categories, ['method' => 'put']) !!}
 
-		@include('categories._form', ['btnText' => 'save changes']))
+		@include('categories._form', ['btnText' => 'save changes'])
 
 	{!! Form::close() !!}
 @stop
