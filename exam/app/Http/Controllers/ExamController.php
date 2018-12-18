@@ -41,14 +41,14 @@ class ExamController extends Controller
         $exams->fill(Request::all());
         $exams->save();
 
-        return redirect('blogs');
+        return redirect('exams');
        }
 
        public function category($category){
        
-        $blogs = DB::table('blogs')->where('category', $category)->get();
+        $blogs = DB::table('exams')->where('category', $category)->get();
 
-        return view('blogs.category', compact('blogs'));
+        return view('exams.category', compact('exams'));
        }
 
      
