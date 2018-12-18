@@ -23,8 +23,6 @@ Route::get('exams','ExamController@index');
 Route::get('exams/create','ExamController@create');
 Route::post('exams','ExamController@store');
 Route::get('exams/category/{category}', 'ExamController@category');
-// Route::post('articles','ArticlesController@new');
-
 
 
 
