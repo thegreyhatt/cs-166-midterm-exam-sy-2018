@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use \App\Blogs;
+use \App\Exam;
 use Request, Validator;
 
 class ExamController extends Controller
@@ -46,7 +46,7 @@ class ExamController extends Controller
 
        public function category($category){
        
-        $blogs = DB::table('exams')->where('category', $category)->get();
+        $exams = DB::table('exams')->where('category', $category)->get();
 
         return view('exams.category', compact('exams'));
        }

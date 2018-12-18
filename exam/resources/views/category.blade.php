@@ -1,10 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
-<!-- <button type="button" class="btn btn-success" onclick="window.location='{{ url("blogs/create") }}'">Create New</button>
-<hr> -->
-
 	@foreach($exams as $exam)
 
 	<div class="panel panel-default">
